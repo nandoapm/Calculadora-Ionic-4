@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Ionic Blank
+      Calculadora Ionic 4
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content padding color="warning">
+  <ion-item>
+    <ion-label class="valor">
+      {{numeroAtual}}
+    </ion-label>
+  </ion-item>
+  <div *ngFor="let numeros of grupoNumeros">
+    <ion-button *ngFor="let numero of numeros" (click)="calculo(numero)" class="calcular" color="dark">
+     {{numero}}
+    </ion-button>
   </div>
 </ion-content>
